@@ -28,15 +28,31 @@ namespace HappyTires.Models
             Address = address;
         }
 
+        //methods brought from HappyTiresDatabase class to be used in Client class
         public void ClientInsertionToDatabase(Client client)
         {
-            // call the existing TXT-based insertion helper (method name matches file: InsertionToDatabse)
-            happyTiresDatabase.InsertionToDatabse(client);
+            
+            happyTiresDatabase.clientInsertionToDatabse(client);
         }
 
         public void ClientDeletionFromDatabase(string DocumentID)
         {
-            happyTiresDatabase.DeletionFromDatabase(DocumentID);
+            happyTiresDatabase.clientDeletionFromDatabase(DocumentID);
+        }
+
+        public void ShowOneClientsFromDatabase(string Name, string DocumentID = "")
+        {
+            happyTiresDatabase.ShowOneClientsFromDatabase(Name, DocumentID);
+        }
+
+        public void ShowAllClientsFromDatabase(string Name, string DocumentID = "")
+        {
+            happyTiresDatabase.ShowAllClientsFromDatabase(Name);
+        }
+
+        public void clientUpdateDatabase(string newElement , string oldElement="")
+        {
+            happyTiresDatabase.clientUpdateDatabase(oldElement, newElement);
         }
     }
 }
