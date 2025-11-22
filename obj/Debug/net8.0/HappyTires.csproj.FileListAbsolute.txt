@@ -1,0 +1,14 @@
+/home/Coder/Escritorio/santiago/HappyTires/bin/Debug/net8.0/HappyTires
+/home/Coder/Escritorio/santiago/HappyTires/bin/Debug/net8.0/HappyTires.deps.json
+/home/Coder/Escritorio/santiago/HappyTires/bin/Debug/net8.0/HappyTires.runtimeconfig.json
+/home/Coder/Escritorio/santiago/HappyTires/bin/Debug/net8.0/HappyTires.dll
+/home/Coder/Escritorio/santiago/HappyTires/bin/Debug/net8.0/HappyTires.pdb
+/home/Coder/Escritorio/santiago/HappyTires/obj/Debug/net8.0/HappyTires.GeneratedMSBuildEditorConfig.editorconfig
+/home/Coder/Escritorio/santiago/HappyTires/obj/Debug/net8.0/HappyTires.AssemblyInfoInputs.cache
+/home/Coder/Escritorio/santiago/HappyTires/obj/Debug/net8.0/HappyTires.AssemblyInfo.cs
+/home/Coder/Escritorio/santiago/HappyTires/obj/Debug/net8.0/HappyTires.csproj.CoreCompileInputs.cache
+/home/Coder/Escritorio/santiago/HappyTires/obj/Debug/net8.0/HappyTires.dll
+/home/Coder/Escritorio/santiago/HappyTires/obj/Debug/net8.0/refint/HappyTires.dll
+/home/Coder/Escritorio/santiago/HappyTires/obj/Debug/net8.0/HappyTires.pdb
+/home/Coder/Escritorio/santiago/HappyTires/obj/Debug/net8.0/HappyTires.genruntimeconfig.cache
+/home/Coder/Escritorio/santiago/HappyTires/obj/Debug/net8.0/ref/HappyTires.dll
