@@ -1,4 +1,4 @@
-```markdown
+
 # 🚀 Happy Tires - A C# Assessment Project
 
 A simple application for managing tire inventory and sales.
@@ -211,4 +211,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 📚 **Libraries used**:
   - [.NET Framework](https://dotnet.microsoft.com/) - Core runtime environment
 - 👥 **Contributors**: Thanks to all [contributors](https://github.com/Windtheking/C-Sharp-Assesment--the-Happy-tires/graphs/contributors)
-```
+
