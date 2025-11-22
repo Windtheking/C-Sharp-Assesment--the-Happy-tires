@@ -1,7 +1,4 @@
-mendoza,1062961731,52014410,santymed,asdfasdf
 andres,10629,52014410,santymed,asdfasdf
 trimmed,161731,52014410,santymed,asdfasdf
 mal0,11731,52014410,santymed,asdfasdf
-santy,1062961731,52014410,santymed,asdfasdf
-santy,1062961731,3234868083,santymend,elapi
 

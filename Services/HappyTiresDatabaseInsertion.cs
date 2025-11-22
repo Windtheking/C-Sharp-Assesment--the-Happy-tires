@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection.Metadata;
+using HappyTires.Interfaces;
 
 namespace HappyTires.Models
 {
@@ -204,6 +205,108 @@ namespace HappyTires.Models
 
                     AllData[i] = string.Join(",", parts);
                     
+                }
+            }
+
+            File.WriteAllLines(filePath, AllData);
+        }
+
+        // ------------------------- Vehicles CRUD (cars & motorcycles) -------------------------
+        // Uses file: ../HappyTires/Data/DatabaseVehicles.txt
+        public void vehicleInsertionToDatabse(Ivehicles vehicle)
+        {
+            // store fields as CSV: TypeOfVechicle,LicensePLate,Make,Brand,Year,AssignedClientName
+            File.AppendAllText("../HappyTires/Data/DatabaseVehicles.txt", Environment.NewLine + vehicle.GetType().Name + "," + vehicle.LicensePLate + "," + vehicle.Make + "," + vehicle.Brand + "," + vehicle.Year + "," + vehicle.AssignedClientName);
+        }
+
+        public void vehicleDeletionFromDatabase(string licensePlate)
+        {
+            string filePath = "../HappyTires/Data/DatabaseVehicles.txt";
+            if (!File.Exists(filePath))
+                return;
+
+            var AllData = File.ReadAllLines(filePath);
+            var FoundElement = AllData.Where(line => !line.Contains(licensePlate));
+            File.WriteAllLines(filePath, FoundElement);
+        }
+
+        // Show all vehicles that match an assigned client name (partial match)
+        public void ShowAllVehiclesFromDatabase(string assignedClientName)
+        {
+            string filePath = "../HappyTires/Data/DatabaseVehicles.txt";
+            if (!File.Exists(filePath))
+                return;
+
+            var AlltheData = File.ReadAllLines(filePath);
+            var i = 0;
+            foreach (var line in AlltheData)
+            {
+                if (line.Contains(assignedClientName))
+                {
+                    if (line.Contains(assignedClientName) && assignedClientName != "")
+                    {
+                        Console.WriteLine($"{i} Vehicle(s) found assigned to: {assignedClientName} ");
+                        Console.WriteLine(line);
+                    }
+                }
+                i++;
+            }
+        }
+
+        // Show one vehicle by license plate or by assigned client name
+        public void ShowOneVehicleFromDatabase(string licensePlate, string assignedClientName)
+        {
+            string filePath = "../HappyTires/Data/DatabaseVehicles.txt";
+            if (!File.Exists(filePath))
+                return;
+
+            var AlltheData = File.ReadAllLines(filePath);
+            foreach (var line in AlltheData)
+            {
+                if (line.Contains(licensePlate) || line.Contains(assignedClientName))
+                {
+                    if (line.Contains(licensePlate) && licensePlate != "")
+                    {
+                        Console.WriteLine("Vehicle found with the license plate: " + licensePlate);
+                        Console.WriteLine(line);
+                        break;
+                    }
+                    else if (line.Contains(assignedClientName) && assignedClientName != "")
+                    {
+                        Console.WriteLine("Vehicle found assigned to: " + assignedClientName);
+                        Console.WriteLine(line);
+                    }
+                }
+            }
+        }
+
+        // Update a specific field value in the vehicles CSV (first or all occurrences depending on need)
+        public void vehicleUpdateDatabase(string OldElement, string NewElement)
+        {
+            string filePath = "../HappyTires/Data/DatabaseVehicles.txt";
+
+            if (!File.Exists(filePath))
+                return;
+
+            var AllData = File.ReadAllLines(filePath);
+
+            for (int i = 0; i < AllData.Length; i++)
+            {
+                if (AllData[i].Contains(OldElement))
+                {
+                    var parts = AllData[i].Split(',');
+
+                    for (int j = 0; j < parts.Length; j++)
+                    {
+                        if (parts[j] == OldElement)
+                        {
+                            parts[j] = NewElement; // update the matching field
+                            break;
+                        }
+                    }
+
+                    AllData[i] = string.Join(",", parts);
+                    // continue to update other lines that may contain OldElement
                 }
             }
 

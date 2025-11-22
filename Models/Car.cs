@@ -13,14 +13,16 @@ namespace HappyTires.Models
         public string Make { get; set; }
         public string Brand { get; set; }
         public string Year { get; set; }
-        
-        public Car(string typeOfVechicle, string licensePLate, string make, string brand, string year)
+        public string AssignedClientName { get; set; }
+
+        public Car(string typeOfVechicle, string licensePLate, string make, string brand, string year, string assignedClientName)
         {
             TypeOfVechicle = typeOfVechicle;
             LicensePLate = licensePLate;
             Make = make;
             Brand = brand;
             Year = year;
+            AssignedClientName = assignedClientName;
         }
     }
 }
